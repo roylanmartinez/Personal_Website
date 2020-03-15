@@ -1,0 +1,9 @@
+# This repository does not track the folowing files/folders:
+
+*.idea
+
+*.sqlite3
+
+/personalwp/settings.py
+
+
