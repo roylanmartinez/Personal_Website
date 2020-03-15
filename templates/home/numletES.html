@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="theme-color" content="#000000" />
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- b cs -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <!-- f cs -->
+    <link rel="stylesheet" href="fonts/css/all.css" />
+    <!-- p cs -->
+    <link rel="stylesheet" href="home.css" />
+    <link rel="stylesheet" href="animate.css" />
+    <title>RM-ES</title>
+  </head>
+  <style>
+    /* sm */
+    @media only screen and (max-width: 978px) {
+      .container {
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-top: 20px;
+        padding-bottom: 40px;
+      }
+      #btnn {
+        height: 100px;
+        position: sticky; 
+        bottom: 30px;
+      }
+      #btnnl {
+        transform: scale(1.5);
+        float: left; 
+        margin-left: 30px;
+      }
+
+      #btnnr {
+        transform: scale(1.5);
+        float: right; 
+        margin-right: 30px;
+
+      }
+    }
+  
+    /* lg */
+    @media only screen and (min-width: 978.1px) {
+      .container {
+        padding-left: 200px;
+        padding-right: 200px;
+        padding-top: 30px;
+        padding-bottom: 40px;
+      }
+      #btnn {
+        height: 100px;
+        position: sticky; 
+        bottom: 1px;
+      }
+      #btnnl {
+        transform: scale(1.5);
+        float: left; 
+        margin-left: 100px;
+      }
+
+      #btnnr {
+        transform: scale(1.5);
+        float: right; 
+        margin-right: 100px;
+
+      }
+    }
+  </style>
+  <body>
+    <div class="container" style="background-color: rgb(230, 230, 230); border-radius: 0 0 15px 15px;">
+      <h4>Proyecto Numlet</h4>
+      <h6
+        style="padding-top: 10px;color: black;">
+        Utilizable en:
+      </h6>
+      <ul class="list-group" style="padding-right: 0px;">
+        <li class="list-group-item list-group-item-success">
+          Excel | GUI's | Páginas Web | Proyectos Basados en Python
+        </li>
+      </ul>
+      <hr>
+      <h6 style="padding-top: 10px;color: black;">
+        Inserta un número, elige un formato y presiona calcular
+      </h6>
+      <div class="input-group input-group mb-3" style="padding-top: 10px;">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="inputGroup-sizing-sm">Número</span>
+        </div>
+        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" placeholder="Utiliza el punto como separador decimal">
+      </div>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <label class="input-group-text" for="inputGroupSelect01">Formato</label>
+        </div>
+        <select class="custom-select" id="inputGroupSelect01" style="width: 30vw;">
+          <option selected>Elige un formato</option>
+          <option value="1">Minúscula</option>
+          <option value="2">Mayúscula</option>
+          <option value="3">Primera Letra Mayúscula</option>
+        </select>
+      </div>
+      <hr color="green">
+      <h7 style="color: green;padding-left: 20px;">Otros ejemplos:</h7>
+      <div style="padding-top: 5px; padding-bottom: 10px;">
+          <div>
+            <button type="button" class="btn btn-outline-success btn-lg">58943</button>
+            <button type="button" class="btn btn-outline-success btn-lg">1.5</button>
+            <button type="button" class="btn btn-outline-success btn-lg">22</button>
+            <button type="button" class="btn btn-outline-success btn-lg">-9876543210</button>
+          </div>
+      </div>
+      <hr>
+      <div>
+        <h4>El número pasado es:</h5>
+          <p style="align-content: center;">
+            Lorem ipsum dolor sit amet conseuasi maiores non?
+          </p>
+      </div>
+    </div>
+    <div id="btnn">
+      <button id="btnnr" type="button" class="btn btn-success rounded-pill">
+        <i class="fas fa-play"> Calcular</i>
+      </button>
+      <button id="btnnl" type="button" class="btn btn-danger rounded-pill">
+        <i class="fas fa-arrow-circle-left"> Regresar</i>
+      </button>
+    </div>
+    
+    
+
+    <div style="bottom: 0px; 
+    position: fixed;border-radius: 25px 25px 0 0; 
+    background-color: rgb(230, 230, 230); width: 100%; text-align: center; padding-top: 10px;">
+      <h6>
+        <p>
+          <a href="https://github.com/roylanmartinez"><i class="fab fa-github"></i> Repositorio de Numlet en Github</a>
+        </p>
+      </h6>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="js/wow.min.js"></script>
+    <script>
+      new WOW().init();
+    </script>
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      var lastScrollTop = 0;
+        $(window).scroll(function (event) {
+          var st = $(this).scrollTop();
+          if (st > lastScrollTop) {
+            $('#btnn').hide()
+          } else {
+            $('#btnn').show()
+          }
+          lastScrollTop = st;
+        });
+    </script>
+  </body>
+</html>
