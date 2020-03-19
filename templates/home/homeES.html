@@ -1,35 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta name="theme-color" content="#000000" />
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-
-  <!-- b cs -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
-  <!-- f cs -->
-  <link rel="stylesheet" href="fonts/css/all.css" />
-  <!-- p cs -->
-  <link rel="stylesheet" href="home.css" />
-  <link rel="stylesheet" href="animate.css" />
-  <link rel="shortcut icon" type="image/png" href="images/logo.png" />
-  <title>RM-ES</title>
-</head>
-<style>
-  body {
-    display: none;
-  }
-
-  html {
-    scroll-behavior: smooth;
-  }
-</style>
-<body>
+{% extends 'home/base.html' %}
+{% load static %}
+{% block content %}
   <!-- BOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOODDDDDDDDDDDDDDDY -->
   <div id="head1" class="wow fadeIn" data-wow-duration="2s" style="background-size:cover;
-    background-image: url(images/degradado0.jpg); background-attachment: fixed;" z-index=0>
+    background-image: url({% static 'images/degradado0.jpg' %}); background-attachment: fixed;" z-index=0>
     <!-- header -->
     <header style="height: 100vh">
       <div class="container">
@@ -61,7 +35,7 @@
     <nav id="nb" class="navbar navbar-expand-lg navbar-light fixed-bottom wow flipInX" data-wow-duration="2s"
       style="background-color: white; border-radius: 25px;">
       <a class="navbar-brand" href="#">
-        <img src="images/logo.png" width="30" height="30" alt=""> Principal
+        <img src="{% static 'images/logo.png' %}" width="30" height="30" alt=""> Principal
       </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
         aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
@@ -79,7 +53,7 @@
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
               <a class="dropdown-item" href="#top">Español</a>
-              <a class="dropdown-item" href="home.html">Inglés</a>
+              <a class="dropdown-item" href="{% url 'pag-en' %}">Inglés</a>
             </div>
           </li>
         </ul>
@@ -225,7 +199,7 @@
             <div class="col-sm- col">
               <div class="card mx-auto shadow-lg wow zoomInLeft" style="width: 100%; border-radius: 25px"
                 data-wow-duration="2s">
-                <img src="images/img3.png" class="card-img-top rounded-circle card mx-auto mt-4" alt="..."
+                <img src="{% static 'images/img3.png' %}" class="card-img-top rounded-circle card mx-auto mt-4" alt="..."
                   style="width: 12rem;">
                 <div class="card-body" style="text-align: center;">
                   <p class="card-text">
@@ -270,7 +244,7 @@
         <div class="d-lg-none">
           <div class="card mx-auto shadow-lg wow zoomInLeft" style="width: 100%; border-radius: 25px;"
             data-wow-duration="2s">
-            <img src="images/img3.png" class="card-img-top rounded-circle card mx-auto mt-4" alt="..."
+            <img src="{% static 'images/img3.png' %}" class="card-img-top rounded-circle card mx-auto mt-4" alt="..."
               style="width: 12rem;">
             <div class="card-body" style="text-align: center;">
               <p class="card-text">
@@ -314,33 +288,5 @@
         </div>
       </div>
     </div>
-  <!-- Optional JavaScript -->
-  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-  <script src="js/wow.min.js"></script>
-  <script>
-    new WOW().init();
-  </script>
-  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-  <script>
-    $(window).scroll(function () {
-      if ($(window).scrollTop() + $(window).height() > $(document).height() - 110) {
-        $('#nb').hide()
-      } else {
-        $('#nb').show()
-      }
-    });
-  </script>
-  <script>
-    $(function () {
-      $('body').show();
-    });
-  </script>
-
-</body>
-
-</html>
+  </div>
+{% endblock %}
