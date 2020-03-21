@@ -24,7 +24,7 @@
         It can be used for instance to put information in bills, GUI's, Web
         Pages or even CSV's; its possibilities are up to you.
       </p>
-      <p class="lead">
+      <div class="wow rollIn">
         <a
           class="mr-lg-2 btn btn-success btn-lg rounded-pill"
           href="{% url 'num-let' %}"
@@ -37,7 +37,7 @@
           role="button"
           ><i class="fab fa-github"></i> REPOSITORY</a
         >
-      </p>
+      </div>
     </div>
   </header>
 
@@ -46,7 +46,7 @@
     id="nb"
     class="navbar navbar-expand-lg navbar-light fixed-bottom wow flipInX"
     data-wow-duration="2s"
-    style="background-color: white; border-radius: 25px;"
+    style="background-color: rgb(255, 255, 255); border-radius: 25px;"
   >
     <a class="navbar-brand" href="#">
       <img src="{% static 'images/logo.png' %}" width="30" height="30" alt="" />
@@ -296,8 +296,8 @@
     <div class="row">
       <div class="col-md-6">
         <div
+          id="test1"
           class="card mx-auto shadow-lg wow zoomInLeft"
-          style="width: 100%; border-radius: 25px;"
           data-wow-duration="2s"
         >
           <img
@@ -320,11 +320,11 @@
       <div class="col-md-6">
         <form class="mx-auto wow zoomInLeft" data-wow-duration="2s">
           <div class="form-group mt-3">
-            <label for="exampleInputEmail1">Email address *</label>
+            <label for="forme">Email address *</label>
             <input
               type="email"
               class="form-control"
-              id="exampleInputEmail1"
+              id="forme"
               aria-describedby="emailHelp"
               placeholder="Enter email"
             />
@@ -333,19 +333,19 @@
             >
           </div>
           <div class="form-group">
-            <label for="exampleInputPassword1">Name *</label>
+            <label for="formn">Name *</label>
             <input
               type="text"
               class="form-control"
-              id="exampleInputPassword1"
+              id="formn"
               placeholder="Your name"
             />
           </div>
           <div class="form-group">
-            <label for="exampleFormControlTextarea1">Message *</label>
+            <label for="formt">Message *</label>
             <textarea
               class="form-control"
-              id="exampleFormControlTextarea1"
+              id="formt"
               rows="3"
               placeholder="Hi Roylan,"
             ></textarea>
@@ -367,7 +367,7 @@
     <br />
     <div class="container">
       <div
-        style="background-color: rgb(230, 230, 230); height: 10vh; border-radius: 60px 60px 0 0;"
+        style="background-color: rgb(10, 10, 10); height: 10vh; border-radius: 60px 60px 0 0;"
       >
         <div class="row">
           <div class="col 12" style="text-align: center;">

@@ -18,11 +18,21 @@
     <link rel="stylesheet" href="{% static 'fonts/css/all.css' %}" />
     <link rel="stylesheet" href="{% static 'css/home.css' %}" />
     <link rel="stylesheet" href="{% static 'css/animate.css' %}" />
+
     <title>RM-ES</title>
   </head>
   <style>
-    p, h1, h2, h3, h4, h5, h6 {
-        color: white;
+    html {
+      scroll-behavior: smooth;
+    }
+    p,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      color: white;
     }
     @media only screen and (max-width: 978px) {
       .container {
@@ -33,23 +43,22 @@
       }
       #btnn {
         height: 100px;
-        position: sticky; 
+        position: sticky;
         bottom: 30px;
       }
       #btnnl {
         transform: scale(1.3);
-        float: left; 
+        float: left;
         margin-left: 30px;
       }
 
       #btnnr {
         transform: scale(1.3);
-        float: right; 
+        float: right;
         margin-right: 30px;
-
       }
     }
-  
+
     @media only screen and (min-width: 978.1px) {
       .container {
         padding-left: 200px;
@@ -59,28 +68,29 @@
       }
       #btnn {
         height: 100px;
-        position: sticky; 
+        position: sticky;
         bottom: 1px;
       }
       #btnnl {
         transform: scale(1.5);
-        float: left; 
+        float: left;
         margin-left: 100px;
       }
 
       #btnnr {
         transform: scale(1.5);
-        float: right; 
+        float: right;
         margin-right: 100px;
-
       }
     }
   </style>
   <body style="background-color: black">
-    <div class="container wow fadeInDownBig" style="background-color: #1F1F1F; border-radius: 0 0 15px 15px;" >
+    <div
+      class="container wow fadeInDownBig"
+      style="background-color: #1F1F1F; border-radius: 0 0 15px 15px;"
+    >
       <h4>Proyecto Numlet</h4>
-      <h6
-        style="padding-top: 10px;color: white;">
+      <h6 style="padding-top: 10px;color: white;">
         Utilizable en:
       </h6>
       <ul class="list-group" style="padding-right: 0px;">
@@ -88,7 +98,7 @@
           Excel | GUI's | Páginas Web | Proyectos Basados en Python
         </li>
       </ul>
-      <hr>
+      <hr />
       <h6 style="padding-top: 10px;color: white;">
         Inserta un número, elige un formato y presiona calcular
       </h6>
@@ -96,51 +106,72 @@
         <div class="input-group-prepend">
           <span class="input-group-text" id="inputGroup-sizing-sm">Número</span>
         </div>
-        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" placeholder="Utiliza el punto como separador decimal">
+        <input
+          type="text"
+          class="form-control"
+          aria-label="Sizing example input"
+          aria-describedby="inputGroup-sizing-sm"
+          placeholder="Utiliza el punto como separador decimal"
+        />
       </div>
       <div class="input-group mb-3">
         <div class="input-group-prepend">
-          <label class="input-group-text" for="inputGroupSelect01">Formato</label>
+          <label class="input-group-text" for="inputGroupSelect01"
+            >Formato</label
+          >
         </div>
-        <select class="custom-select" id="inputGroupSelect01" style="width: 30vw;">
+        <select
+          class="custom-select"
+          id="inputGroupSelect01"
+          style="width: 30vw;"
+        >
           <option selected>Elige un formato</option>
           <option value="1">Minúscula</option>
           <option value="2">Mayúscula</option>
           <option value="3">Primera Letra Mayúscula</option>
         </select>
       </div>
-      <hr color="green">
+      <hr color="green" />
       <h7 style="color: green;padding-left: 20px;">Otros ejemplos:</h7>
       <div style="padding-top: 5px; padding-bottom: 10px;">
-          <div>
-            <button type="button" class="btn btn-outline-success btn-lg">58943</button>
-            <button type="button" class="btn btn-outline-success btn-lg">1.5</button>
-            <button type="button" class="btn btn-outline-success btn-lg">22</button>
-            <button type="button" class="btn btn-outline-success btn-lg">-9876543210</button>
-          </div>
+        <div>
+          <button type="button" class="btn btn-outline-success btn-lg">
+            58943
+          </button>
+          <button type="button" class="btn btn-outline-success btn-lg">
+            1.5
+          </button>
+          <button type="button" class="btn btn-outline-success btn-lg">
+            22
+          </button>
+          <button type="button" class="btn btn-outline-success btn-lg">
+            -9876543210
+          </button>
+        </div>
       </div>
-      <hr>
-
+      <hr />
     </div>
     <div id="btnn" class="wow rollIn">
       <button id="btnnr" type="button" class="btn btn-success rounded-pill">
         <i class="fas fa-play"> Calcular</i>
       </button>
       <a href="{% url 'pag-en' %}">
-          <button id="btnnl" type="button" class="btn btn-danger rounded-pill">
-            <i class="fas fa-arrow-circle-left"> Regresar</i>
-          </button>
+        <button id="btnnl" type="button" class="btn btn-danger rounded-pill">
+          <i class="fas fa-arrow-circle-left"> Regresar</i>
+        </button>
       </a>
     </div>
-    
-    
 
-    <div style="bottom: 0px;
+    <div
+      style="bottom: 0px;
     position: fixed;border-radius: 25px 25px 0 0; 
-    background-color: rgb(230, 230, 230); width: 100%; text-align: center; padding-top: 10px;">
+    background-color: rgb(230, 230, 230); width: 100%; text-align: center; padding-top: 10px;"
+    >
       <h6>
         <p>
-          <a href="https://github.com/roylanmartinez"><i class="fab fa-github"></i> Repositorio de Numlet en Github</a>
+          <a href="https://github.com/roylanmartinez"
+            ><i class="fab fa-github"></i> Repositorio de Numlet en Github</a
+          >
         </p>
       </h6>
     </div>
@@ -168,15 +199,15 @@
     ></script>
     <script>
       var lastScrollTop = 0;
-        $(window).scroll(function (event) {
-          var st = $(this).scrollTop();
-          if (st > lastScrollTop) {
-            $('#btnn').hide()
-          } else {
-            $('#btnn').show()
-          }
-          lastScrollTop = st;
-        });
+      $(window).scroll(function(event) {
+        var st = $(this).scrollTop();
+        if (st > lastScrollTop) {
+          $("#btnn").hide();
+        } else {
+          $("#btnn").show();
+        }
+        lastScrollTop = st;
+      });
     </script>
   </body>
 </html>
