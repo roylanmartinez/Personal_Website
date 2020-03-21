@@ -1,0 +1,29 @@
+/* @media only screen and (max-width: 978px) {
+    h1 {
+        font-size: 300%;
+        color: white;
+        font-weight: bold;"
+    }
+    #boody {
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 25px 25px 0 0;
+    background-color:black
+  }
+}
+@media only screen and (min-width: 978.1px) {
+    h1 {
+        font-size: 100%;
+        color: white;
+        font-weight: bold;
+    }
+    .rooy {
+    padding-left: 300px;
+    padding-right: 10px;
+    border-radius: 25px 25px 0 0;
+    background-color:black
+  }
+} */
+.rooy {
+  background-color: blue;
+}
