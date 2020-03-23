@@ -1,381 +1,263 @@
 {% extends 'home/base.html' %} {% load static %} {% block content %}
-<!-- BOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOODDDDDDDDDDDDDDDY -->
-<div
-  id="head1"
-  class="wow fadeIn"
-  data-wow-duration="2s"
-  style="background-size:cover;
-    background-image: url({% static 'images/degradado0.jpg' %}); background-attachment: fixed;"
->
-  <!-- header -->
-  <header style="height: 100vh">
-    <div class="container">
-      <br />
-      <br />
-      <h1>
-        Proyecto Numlet
-      </h1>
-      <p class="lead" style="color: white; font-weight: 500;">
-        Numlet es un proyecto basado en Python capaz de convertir más de un
-        duocentillón de números diferentes a palabras.
-      </p>
-      <hr class="my-4" />
-      <p style="color: #CFD4D6; font-size: small;">
-        Puede ser utilizada para poner información en facturas, informes,
-        balances, Excel, GUI o cualquier proyecto basado en Python.
-      </p>
-      <div class="wow rollIn">
-        <a
-          class="mr-lg-2 btn btn-success btn-lg rounded-pill"
-          href="{% url 'num-let' %}"
-          role="button"
-          ><i class="fas fa-play-circle"></i> PROBARLO</a
-        >
-        <a
-          class="btn btn-outline-secondary btn-lg rounded-pill"
-          href="#"
-          role="button"
-          ><i class="fab fa-github"></i> REPOSITORIO</a
-        >
-      </div>
+<div class="row-12" style="background-color:rgb(0, 0, 0)">
+  <div class="column-12">
+    {% if messages %}
+    {% for message in messages %}
+    {% if 'green' in message.extra_tags %}
+    <div class="alert alert-success alert-dismissible fade show" role="alert" style="margin-bottom: 0px;">
+      <h4 class="alert-heading">¡Gracias!</h4>
+      <hr />
+      <strong>¡Tu mensaje fue enviado exitósamente!</strong> Aprecio enormemente tu interés
+      &#10084;
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
     </div>
-  </header>
-
-  <!-- navbarbottom -->
-  <nav
-    id="nb"
-    class="navbar navbar-expand-lg navbar-light fixed-bottom wow flipInX"
-    data-wow-duration="2s"
-    style="background-color: white; border-radius: 25px;"
-  >
-    <a class="navbar-brand" href="#">
-      <img src="{% static 'images/logo.png' %}" width="30" height="30" alt="" />
-      Home
-    </a>
-    <button
-      class="navbar-toggler"
-      type="button"
-      data-toggle="collapse"
-      data-target="#navbarText"
-      aria-controls="navbarText"
-      aria-expanded="false"
-      aria-label="Toggle navigation"
-    >
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarText">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item">
-          <a class="nav-link" href="#icontact"
-            ><i class="far fa-envelope"></i> Contacto</a
-          >
-        </li>
-        <li class="nav-item dropup">
-          <a
-            class="nav-link dropdown-toggle"
-            href="#"
-            id="navbarDropdownMenuLink"
-            role="button"
-            data-toggle="dropdown"
-            aria-haspopup="true"
-            aria-expanded="false"
-          >
-            <i class="fas fa-globe-europe"></i> Idioma
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <a class="dropdown-item" href="#top">Español</a>
-            <a class="dropdown-item" href="{% url 'pag-en' %}">Inglés</a>
-          </div>
-        </li>
-      </ul>
+    {% else %}
+    <div class="alert alert-danger alert-dismissible fade show" role="alert" style="margin-bottom: 0px;">
+      <h4 class="alert-heading">¡Tu mensaje, email o nombre tiene algo mal!</h4>
+      <hr />
+      <strong>¿Podrías intentarlo otra vez?</strong> Aprecio enormemente tu interés
+      &#10084;
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
     </div>
-  </nav>
-  <!-- BODY -->
-  <div id="boody">
-    <br />
-    <h3 class="wow bounceIn">HABILIDADES</h3>
-    <hr />
-    <div class="wow fadeInLeftBig" data-wow-duration="2s">
-      <h4>Python</h4>
-      <div class="progress">
-        <div
-          class="progress-bar progress-bar-striped"
-          role="progressbar"
-          aria-valuenow="75"
-          aria-valuemin="0"
-          aria-valuemax="100"
-          style="width: 90%"
-        ></div>
-      </div>
-      <p style="font-weight:600">
-        Tengo bastante conocimiento de la sintáxis de Python y especial
-        familiaridad con las librerías SciPy, NumPy, Matplotlib, Scikit-Learn o
-        Pandas.
-      </p>
-      <br />
-      <h4>Microsoft Office</h4>
-      <div class="progress">
-        <div
-          class="progress-bar progress-bar-striped"
-          role="progressbar"
-          aria-valuenow="75"
-          aria-valuemin="0"
-          aria-valuemax="100"
-          style="width: 80%"
-        ></div>
-      </div>
-      <p style="font-weight:600">
-        Tengo un buen conocimiento de Excel (macros, declaraciones de si
-        anidados, tablas dinámicas, etc ...) y especial familiaridad con Word y
-        PowerPoint.
-      </p>
-      <br />
-      <h4>Git</h4>
-      <div class="progress">
-        <div
-          class="progress-bar progress-bar-striped"
-          role="progressbar"
-          aria-valuenow="75"
-          aria-valuemin="0"
-          aria-valuemax="100"
-          style="width: 70%"
-        ></div>
-      </div>
-      <p style="font-weight:600">
-        Sé la sintaxis y los comandos básicos de Git. También sé usarlo junto
-        con la plataforma Github.
-      </p>
-      <br />
-      <h4>R</h4>
-      <div class="progress">
-        <div
-          class="progress-bar progress-bar-striped"
-          role="progressbar"
-          aria-valuenow="75"
-          aria-valuemin="0"
-          aria-valuemax="100"
-          style="width: 60%"
-        ></div>
-      </div>
-      <p style="font-weight:600">
-        Conozco los conceptos básicos de R (gráficos de series de tiempo,
-        aplicaciones estadísticas de R, matrices, etc ...)
-      </p>
-      <br />
-      <h4>Frontend Web Development</h4>
-      <div class="progress">
-        <div
-          class="progress-bar progress-bar-striped"
-          role="progressbar"
-          aria-valuenow="75"
-          aria-valuemin="0"
-          aria-valuemax="100"
-          style="width: 55%"
-        ></div>
-      </div>
-      <p style="font-weight:600">
-        Tengo un conocimiento intermedio de desarrollo frontend (por ejemplo,
-        esta web fue diseñada por mí usando HTML, Jquery, CSS y Bootstrap)
-      </p>
-      <br />
-      <h4>Backend Web Development</h4>
-      <div class="progress">
-        <div
-          class="progress-bar progress-bar-striped"
-          role="progressbar"
-          aria-valuenow="75"
-          aria-valuemin="0"
-          aria-valuemax="100"
-          style="width: 55%"
-        ></div>
-      </div>
-      <p style="font-weight:600">
-        Tengo un conocimiento intermedio del marco general de Django y su
-        suntáxis. También sé cómo lidiar con los métodos HTTP, mantenimiento
-        Admin, ORM, aplicaciones o recursos integrados de Django.
-      </p>
-      <br />
-      <h4>Bases de Datos</h4>
-      <div class="progress">
-        <div
-          class="progress-bar progress-bar-striped"
-          role="progressbar"
-          aria-valuenow="75"
-          aria-valuemin="0"
-          aria-valuemax="100"
-          style="width: 50%"
-        ></div>
-      </div>
-      <p style="font-weight:600">
-        Tengo un conocimiento básico de la sintáxis de PostgreSQL y también de
-        SQLite (por ejemplo, esta página ejecuta en el Backend una base de datos
-        PostgreSQL)
-      </p>
-      <br />
-    </div>
-    <h3 class="wow bounceIn">EDUCACIÓN</h3>
-    <hr />
-    <div class="wow fadeInLeftBig">
-      <h4>Economics - <i>Universitat Autònoma de Barcelona</i></h4>
-      <div class="progress">
-        <div
-          class="progress-bar progress-bar-striped bg-danger"
-          role="progressbar"
-          aria-valuenow="75"
-          aria-valuemin="0"
-          aria-valuemax="100"
-          style="width: 50%"
-        ></div>
-      </div>
-      <p style="font-weight:600">
-        Terminaré el grado universitario en el 2022 (<i
-          >Actualmente en el cuarto curso de ocho en total</i
-        >)
-      </p>
-    </div>
-    <br />
-    <h3 class="wow bounceIn">IDIOMAS</h3>
-    <hr />
-    <div class="wow fadeInLeftBig">
-      <h4>Spanish</h4>
-      <div class="progress">
-        <div
-          class="progress-bar progress-bar-striped bg-success"
-          role="progressbar"
-          aria-valuenow="75"
-          aria-valuemin="0"
-          aria-valuemax="100"
-          style="width: 100%"
-        ></div>
-      </div>
-      <p style="font-weight:600">
-        I am a native spanish speaker. My CEFR level is arround the C2.
-      </p>
-      <br />
-      <h4>English</h4>
-      <div class="progress">
-        <div
-          class="progress-bar progress-bar-striped bg-success"
-          role="progressbar"
-          aria-valuenow="75"
-          aria-valuemin="0"
-          aria-valuemax="100"
-          style="width: 80%"
-        ></div>
-      </div>
-      <p style="font-weight:600">
-        Puedo hablar inglés bastante bien. Además estudio el grado en
-        este idioma y mi nivel de CEFR está alrededor del B2.
-      </p>
-      <br />
-      <h4>Catalán</h4>
-      <div class="progress">
-        <div
-          class="progress-bar progress-bar-striped bg-success"
-          role="progressbar"
-          aria-valuenow="75"
-          aria-valuemin="0"
-          aria-valuemax="100"
-          style="width: 40%"
-        ></div>
-      </div>
-      <p style="font-weight:600">
-        Puedo entenderlo bastante bien, sin embargo, mi nivel de MCER está
-        alrededor del A2.
-      </p>
-    </div>
-
-    <h3
-      id="icontact"
-      class="wow bounceIn"
-      style="text-align: center; margin-bottom: 5%;"
-    >
-      CONTACTO
-    </h3>
-    <hr />
-    <!-- small size -->
-    <div class="row">
-      <div class="col-md-6">
-        <div
-          id="test1"
-          class="card mx-auto shadow-lg wow zoomInLeft"
-          data-wow-duration="2s"
-        >
-          <img
-            src="{% static 'images/img3.png' %}"
-            class="card-img-top rounded-circle card mx-auto mt-4"
-            alt="..."
-            style="width: 12rem;"
-          />
-          <div class="card-body" style="text-align: center;">
-            <p class="card-text">
-              Rolyan Martinez V. (22) nació en Costa Rica y actualmente está
-              viviendo en Barcelona, SP. Es un apasionado de la Economía, las
-              Finanzas y la Tecnología.
-            </p>
-            <h5 class="card-title">Desarrollador Aficionado de Python</h5>
+    {% endif %}
+    {% endfor %}
+    {% endif %}
+  </div>
+  <div>
+    <div id="head1" class="wow fadeIn" data-wow-duration="2s" style="background-size:cover;
+        background-image: url({% static 'images/degradado0.jpg' %}); background-attachment: fixed;">
+      <!-- header -->
+      <header style="height: 100vh">
+        <div class="container">
+          <br />
+          <br />
+          <h1>
+            Proyecto Numlet
+          </h1>
+          <p class="lead" style="color: white; font-weight: 500;">
+            Numlet es un proyecto basado en Python capaz de convertir más de dos
+            duocentillones de números diferentes a palabras en español.
+          </p>
+          <hr class="my-4" />
+          <p style="color: #CFD4D6; font-size: small;">
+            Puede ser utilizada para poner información en Excel, Facturas, Reportes, Informes,
+            Páginas Web, Otros Proyectos en Python, etc..
+          </p>
+          <div class="wow rollIn">
+            <a class="mr-lg-2 btn btn-success btn-lg rounded-pill" href="{% url 'num-let' %}" role="button"><i
+                class="fas fa-play-circle"></i> PROBARLO</a>
+            <a class="btn btn-outline-secondary btn-lg rounded-pill" href="#" role="button"><i
+                class="fab fa-github"></i>
+              REPOSITORIO</a>
           </div>
         </div>
-      </div>
-      <div class="col-md-6">
-        <form class="mx-auto wow zoomInLeft" data-wow-duration="2s">
-          <div class="form-group mt-3">
-            <label for="forme">Dirección email *</label>
-            <input
-              type="email"
-              class="form-control"
-              id="forme"
-              aria-describedby="emailHelp"
-              placeholder="Enter email"
-            />
-            <small id="emailHelp" class="form-text text-muted"
-              >Tú correo electrónico no será compartido con nadie más.</small
-            >
+      </header>
+
+      <!-- navbarbottom -->
+      <nav id="nb" class="navbar navbar-expand-lg navbar-light fixed-bottom wow flipInX" data-wow-duration="2s"
+        style="background-color: white; border-radius: 25px;">
+        <a class="navbar-brand" href="#">
+          <img src="{% static 'images/logo.png' %}" width="30" height="30" alt="" />
+          Home
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
+          aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarText">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#icontact"><i class="far fa-envelope"></i> Contacto</a>
+            </li>
+            <li class="nav-item dropup">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fas fa-globe-europe"></i> Idioma
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" href="#top">Español</a>
+                <a class="dropdown-item" href="{% url 'pag-en' %}">Inglés</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <!-- BODY -->
+      <div id="boody">
+        <br />
+        <h3 class="wow bounceIn">HABILIDADES</h3>
+        <hr />
+        <div class="wow fadeInLeftBig" data-wow-duration="2s">
+          <h4>Python</h4>
+          <div class="progress">
+            <div class="progress-bar progress-bar-striped" role="progressbar" aria-valuenow="75" aria-valuemin="0"
+              aria-valuemax="100" style="width: 90%"></div>
           </div>
-          <div class="form-group">
-            <label for="formn">Nombre *</label>
-            <input
-              type="text"
-              class="form-control"
-              id="formn"
-              placeholder="Your name"
-            />
+          <p style="font-weight:600">
+            Tengo bastante conocimiento de la sintáxis de Python y especial
+            familiaridad con las librerías SciPy, NumPy, Matplotlib, Scikit-Learn o
+            Pandas.
+          </p>
+          <br />
+          <h4>Microsoft Office</h4>
+          <div class="progress">
+            <div class="progress-bar progress-bar-striped" role="progressbar" aria-valuenow="75" aria-valuemin="0"
+              aria-valuemax="100" style="width: 80%"></div>
           </div>
-          <div class="form-group">
-            <label for="formt">Mensaje *</label>
-            <textarea
-              class="form-control"
-              id="formt"
-              rows="3"
-              placeholder="Hola Roylan, "
-            ></textarea>
+          <p style="font-weight:600">
+            Tengo un buen conocimiento de Excel (macros, declaraciones de si
+            anidados, tablas dinámicas, etc ...) y especial familiaridad con Word y
+            PowerPoint.
+          </p>
+          <br />
+          <h4>Git</h4>
+          <div class="progress">
+            <div class="progress-bar progress-bar-striped" role="progressbar" aria-valuenow="75" aria-valuemin="0"
+              aria-valuemax="100" style="width: 70%"></div>
           </div>
-          <div style="text-align: center;">
-            <button
-              type="button"
-              class="btn btn-success btn-lg rounded-pill wow fadeInUp"
-              data-wow-delay="0.5s"
-              style="text-align: center;"
-            >
-              <i class="fas fa-paper-plane"></i> ENVIAR
-            </button>
+          <p style="font-weight:600">
+            Sé la sintaxis y los comandos básicos de Git. También sé usarlo junto
+            con la plataforma Github.
+          </p>
+          <br />
+          <h4>R</h4>
+          <div class="progress">
+            <div class="progress-bar progress-bar-striped" role="progressbar" aria-valuenow="75" aria-valuemin="0"
+              aria-valuemax="100" style="width: 60%"></div>
           </div>
-        </form>
-      </div>
-    </div>
-    <br />
-    <div class="container">
-      <div
-        style="background-color: rgb(10, 10, 10); height: 10vh; border-radius: 60px 60px 0 0;"
-      >
+          <p style="font-weight:600">
+            Conozco los conceptos básicos de R (gráficos de series de tiempo,
+            aplicaciones estadísticas de R, matrices, etc ...)
+          </p>
+          <br />
+          <h4>Frontend Web Development</h4>
+          <div class="progress">
+            <div class="progress-bar progress-bar-striped" role="progressbar" aria-valuenow="75" aria-valuemin="0"
+              aria-valuemax="100" style="width: 55%"></div>
+          </div>
+          <p style="font-weight:600">
+            Tengo un conocimiento intermedio de desarrollo frontend (por ejemplo,
+            esta web fue diseñada por mí usando HTML, Jquery, CSS y Bootstrap)
+          </p>
+          <br />
+          <h4>Backend Web Development</h4>
+          <div class="progress">
+            <div class="progress-bar progress-bar-striped" role="progressbar" aria-valuenow="75" aria-valuemin="0"
+              aria-valuemax="100" style="width: 55%"></div>
+          </div>
+          <p style="font-weight:600">
+            Tengo un conocimiento intermedio del marco general de Django y su
+            suntáxis. También sé cómo lidiar con los métodos HTTP, mantenimiento
+            Admin, ORM, aplicaciones o recursos integrados de Django.
+          </p>
+          <br />
+          <h4>Bases de Datos</h4>
+          <div class="progress">
+            <div class="progress-bar progress-bar-striped" role="progressbar" aria-valuenow="75" aria-valuemin="0"
+              aria-valuemax="100" style="width: 50%"></div>
+          </div>
+          <p style="font-weight:600">
+            Tengo un conocimiento básico de la sintáxis de PostgreSQL y también de
+            SQLite (por ejemplo, esta página ejecuta en el Backend una base de datos
+            PostgreSQL)
+          </p>
+          <br />
+        </div>
+        <h3 class="wow bounceIn">EDUCACIÓN</h3>
+        <hr />
+        <div class="wow fadeInLeftBig">
+          <h4>Economics - <i>Universitat Autònoma de Barcelona</i></h4>
+          <div class="progress">
+            <div class="progress-bar progress-bar-striped bg-danger" role="progressbar" aria-valuenow="75"
+              aria-valuemin="0" aria-valuemax="100" style="width: 50%"></div>
+          </div>
+          <p style="font-weight:600">
+            Terminaré el grado universitario en el 2022 (<i>Actualmente en el cuarto curso de ocho en total</i>)
+          </p>
+        </div>
+        <br />
+        <h3 class="wow bounceIn">IDIOMAS</h3>
+        <hr />
+        <div class="wow fadeInLeftBig">
+          <h4>Spanish</h4>
+          <div class="progress">
+            <div class="progress-bar progress-bar-striped bg-success" role="progressbar" aria-valuenow="75"
+              aria-valuemin="0" aria-valuemax="100" style="width: 100%"></div>
+          </div>
+          <p style="font-weight:600">
+            I am a native spanish speaker. My CEFR level is arround the C2.
+          </p>
+          <br />
+          <h4>English</h4>
+          <div class="progress">
+            <div class="progress-bar progress-bar-striped bg-success" role="progressbar" aria-valuenow="75"
+              aria-valuemin="0" aria-valuemax="100" style="width: 80%"></div>
+          </div>
+          <p style="font-weight:600">
+            Puedo hablar inglés bastante bien. Además estudio el grado en
+            este idioma y mi nivel de CEFR está alrededor del B2.
+          </p>
+          <br />
+          <h4>Catalán</h4>
+          <div class="progress">
+            <div class="progress-bar progress-bar-striped bg-success" role="progressbar" aria-valuenow="75"
+              aria-valuemin="0" aria-valuemax="100" style="width: 40%"></div>
+          </div>
+          <p style="font-weight:600">
+            Puedo entenderlo bastante bien, sin embargo, mi nivel de MCER está
+            alrededor del A2.
+          </p>
+        </div>
+
+        <h3 id="icontact" class="wow bounceIn" style="text-align: center; margin-bottom: 5%;">
+          CONTACTO
+        </h3>
+        <hr />
+        <!-- small size -->
         <div class="row">
-          <div class="col 12" style="text-align: center;">
-            <br />
-            <p>
-              <a href="https://github.com/roylanmartinez"
-                ><i class="fab fa-github"></i> Perfil de Github</a
-              >
-            </p>
+          <div class="col-md-6">
+            <div id="test1" class="card mx-auto shadow-lg wow zoomInLeft" data-wow-duration="2s">
+              <img src="{% static 'images/img3.png' %}" class="card-img-top rounded-circle card mx-auto mt-4" alt="..."
+                style="width: 12rem;" />
+              <div class="card-body" style="text-align: center;">
+                <p class="card-text">
+                  Rolyan Martinez V. (22) nació en Costa Rica y actualmente está
+                  viviendo en Barcelona, SP. Es un apasionado de la Economía, las
+                  Finanzas y la Tecnología.
+                </p>
+                <h5 class="card-title">Desarrollador Aficionado de Python</h5>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <form class="form-group mx-auto wow zoomInLeft" data-wow-duration="2s" action="{% url 'pag-es' %}"
+              method="POST">
+              {% csrf_token %} {{ form }}
+              <br />
+              <div style="text-align: center;">
+                <button type="submit" class="btn btn-success btn-lg rounded-pill" data-wow-delay="0.5s"
+                  style="text-align: center;">
+                  <i class="fas fa-paper-plane"></i> ENVIAR
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+        <br />
+        <div class="container">
+          <div style="background-color: rgb(10, 10, 10); height: 10vh; border-radius: 60px 60px 0 0;">
+            <div class="row">
+              <div class="col 12" style="text-align: center;">
+                <br />
+                <p>
+                  <a href="https://github.com/roylanmartinez"><i class="fab fa-github"></i> Perfil de Github</a>
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
