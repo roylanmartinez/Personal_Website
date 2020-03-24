@@ -1,0 +1,27 @@
+<!-- {% for message in messages %}
+    <div>
+      <h1>{{ message }}</h1>
+    </div>
+    {% for tag in messages.extra_tags%}
+    <div class="alert alert-success alert-dismissible fade show" role="alert" style="margin-bottom: 0px;">
+      <h4 class="alert-heading">Thank you!</h4>
+      <hr />
+      <strong>{{ tag }} Your message was sent!</strong> I greatly appreciate your interest
+      &#10084;
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    {% endfor %}
+    {% endfor %}
+    {% elif 'unsafe' in messages %}
+    <div class="alert alert-danger alert-dismissible fade show" role="alert" style="margin-bottom: 0px;">
+      <h4 class="alert-heading">Your message, email or name have something wrong!</h4>
+      <hr />
+      <strong>Could you try it again?</strong> I greatly appreciate your interest
+      &#10084;
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    {% endif %} -->

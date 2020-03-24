@@ -1,19 +1,22 @@
 from django.contrib import messages
 from django.shortcuts import render, redirect
 from .forms import Contactf, Contactfes
-
-# Create your views here.
+from .ms import go
 
 
 def home(request):
     if request.method == 'POST':
         form = Contactf(request.POST or None)
         if form.is_valid():
+            nemail = str(request.POST['email'])
+            nname = str(request.POST['name']).split(' ')
+            nm = ' '.join([word.capitalize() for word in nname])
             form.save()
-            messages.info(request, 'lol', extra_tags='green')
+            go(nombre=nm, correo=nemail)
+            messages.success(request, nm)
             return redirect('pag-en')
         else:
-            messages.info(request, 'lol', extra_tags='red')
+            messages.info(request, '')
             return redirect('pag-en')
 
     else:
@@ -25,11 +28,15 @@ def homees(request):
     if request.method == 'POST':
         form = Contactfes(request.POST or None)
         if form.is_valid():
+            nemail = str(request.POST['email'])
+            nname = str(request.POST['name']).split(' ')
+            nm = ' '.join([word.capitalize() for word in nname])
             form.save()
-            messages.info(request, 'lol', extra_tags='green')
+            go(nombre=nm, correo=nemail)
+            messages.success(request, nm)
             return redirect('pag-es')
         else:
-            messages.info(request, 'lol', extra_tags='red')
+            messages.info(request, '')
             return redirect('pag-es')
 
     else:
