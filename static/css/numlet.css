@@ -1,0 +1,41 @@
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+color: white;
+}
+
+@media only screen and (max-width: 978px) {
+
+.container {
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 20px;
+    padding-bottom: 40px;
+}
+
+#resultado {
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+}
+
+@media only screen and (min-width: 978.1px) {
+.container {
+    padding-left: 200px;
+    padding-right: 200px;
+    padding-top: 30px;
+    padding-bottom: 40px;
+}
+
+#resultado {
+    padding-right: 70px;
+    padding-left: 70px;
+    padding-bottom: 100px;
+}
+
+}

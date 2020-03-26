@@ -1,5 +1,5 @@
 {% extends 'home/base.html' %} {% load static %} {% block content %}
-<div class="row-12" style="background-color:rgb(0, 0, 0)">
+<div class="row-12">
   <div class="column-12">
     {% if messages %}
     {% for msg in messages %}
@@ -29,9 +29,9 @@
   </div>
   <div>
     <div id="head1" class="wow fadeIn" data-wow-duration="2s" style="background-size:cover;
-        background-image: url({% static 'images/degradado0.jpg' %}); background-attachment: fixed;">
+        background-color:rgb(0, 56, 30); background-attachment: fixed;">
       <header style="height: 100vh">
-        <div class="container">
+        <div class="container" class="container" id="horizontal" style="position: fixed;">
           <br />
           <br />
           <h1>
@@ -41,7 +41,6 @@
             Numlet es un proyecto basado en Python capaz de convertir más de dos
             duocentillones de números diferentes a palabras en español.
           </p>
-          <hr class="my-4" />
           <p style="color: #CFD4D6; font-size: small;">
             Puede ser utilizada para poner información en Excel, Facturas, Reportes, Informes,
             Páginas Web, Otros Proyectos en Python, etc..
@@ -59,7 +58,6 @@
         style="background-color: white; border-radius: 25px;">
         <a class="navbar-brand" href="#">
           <img src="{% static 'images/logo.png' %}" width="30" height="30" alt="" />
-          Home
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
           aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
@@ -83,9 +81,9 @@
           </ul>
         </div>
       </nav>
-      <div id="boody">
+      <div id="boody" style="position:relative">
         <br />
-        <h3 class="wow bounceIn">HABILIDADES</h3>
+        <h3 class="wow fadeIn" data-wow-duration="5s">HABILIDADES</h3>
         <hr />
         <div class="wow fadeInLeftBig" data-wow-duration="2s">
           <h4>Python</h4>
@@ -110,40 +108,20 @@
             PowerPoint.
           </p>
           <br />
-          <h4>Git</h4>
-          <div class="progress">
-            <div class="progress-bar progress-bar-striped" role="progressbar" aria-valuenow="75" aria-valuemin="0"
-              aria-valuemax="100" style="width: 70%"></div>
-          </div>
-          <p style="font-weight:600">
-            Sé la sintaxis y los comandos básicos de Git. También sé usarlo junto
-            con la plataforma Github.
-          </p>
-          <br />
-          <h4>R</h4>
-          <div class="progress">
-            <div class="progress-bar progress-bar-striped" role="progressbar" aria-valuenow="75" aria-valuemin="0"
-              aria-valuemax="100" style="width: 60%"></div>
-          </div>
-          <p style="font-weight:600">
-            Tengo un conocimiento intermedio de R (gráficos de series de tiempo,
-            aplicaciones estadísticas de R, matrices, etc ...)
-          </p>
-          <br />
           <h4>Frontend Web Development</h4>
           <div class="progress">
             <div class="progress-bar progress-bar-striped" role="progressbar" aria-valuenow="75" aria-valuemin="0"
-              aria-valuemax="100" style="width: 58%"></div>
+              aria-valuemax="100" style="width: 65%"></div>
           </div>
           <p style="font-weight:600">
             Tengo un conocimiento intermedio de desarrollo frontend (por ejemplo,
-            esta web fue diseñada por mí usando HTML, Javacript (principalmente librería Jquery), CSS y Bootstrap)
+            esta web fue diseñada por mí usando HTML, Javacript (principalmente librería Jquery), CSS y Bootstrap.
           </p>
           <br />
           <h4>Backend Web Development</h4>
           <div class="progress">
             <div class="progress-bar progress-bar-striped" role="progressbar" aria-valuenow="75" aria-valuemin="0"
-              aria-valuemax="100" style="width: 55%"></div>
+              aria-valuemax="100" style="width: 65%"></div>
           </div>
           <p style="font-weight:600">
             Tengo un conocimiento intermedio del marco general de Django y su
@@ -151,10 +129,20 @@
             Admin, ORM, aplicaciones o recursos integrados de Django.
           </p>
           <br />
+          <h4>Git</h4>
+          <div class="progress">
+            <div class="progress-bar progress-bar-striped" role="progressbar" aria-valuenow="75" aria-valuemin="0"
+              aria-valuemax="100" style="width: 65%"></div>
+          </div>
+          <p style="font-weight:600">
+            Sé la sintaxis y los comandos más utilizados de Git. También sé utilizarlo junto
+            con la plataforma Github.
+          </p>
+          <br />
           <h4>Bases de Datos</h4>
           <div class="progress">
             <div class="progress-bar progress-bar-striped" role="progressbar" aria-valuenow="75" aria-valuemin="0"
-              aria-valuemax="100" style="width: 50%"></div>
+              aria-valuemax="100" style="width: 60%"></div>
           </div>
           <p style="font-weight:600">
             Tengo un conocimiento básico de la sintáxis de PostgreSQL y también de
@@ -162,8 +150,18 @@
             PostgreSQL)
           </p>
           <br />
+          <h4>R</h4>
+          <div class="progress">
+            <div class="progress-bar progress-bar-striped" role="progressbar" aria-valuenow="75" aria-valuemin="0"
+              aria-valuemax="100" style="width: 50%"></div>
+          </div>
+          <p style="font-weight:600">
+            Tengo un conocimiento intermedio de R (gráficos de series de tiempo,
+            aplicaciones estadísticas de R, matrices, etc ...)
+          </p>
+          <br />
         </div>
-        <h3 class="wow bounceIn">EDUCACIÓN</h3>
+        <h3 class="wow fadeIn" data-wow-duration="5s">EDUCACIÓN</h3>
         <hr />
         <div class="wow fadeInLeftBig">
           <h4>Economics - <i>Universitat Autònoma de Barcelona</i></h4>
@@ -209,7 +207,7 @@
           </p>
         </div>
 
-        <h3 id="icontact" class="wow bounceIn" style="text-align: center; margin-bottom: 5%;">
+        <h3 id="icontact" class="wow fadeIn" data-wow-duration="5s" style="text-align: center; margin-bottom: 5%;">
           CONTACTO
         </h3>
         <hr />

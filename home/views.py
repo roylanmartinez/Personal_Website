@@ -32,7 +32,7 @@ def homees(request):
             nname = str(request.POST['name']).split(' ')
             nm = ' '.join([word.capitalize() for word in nname])
             form.save()
-            go(nombre=nm, correo=nemail)
+            go(nombre=nm, correo=nemail, es=True)
             messages.success(request, nm)
             return redirect('pag-es')
         else:

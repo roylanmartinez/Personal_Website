@@ -3,14 +3,14 @@
 <html lang="en">
 
 <head>
-  <meta name="theme-color" content="#000000" />
+  <meta name="theme-color" content="rgb(0, 56, 30)" />
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
     integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
   <link rel="stylesheet" href="{% static 'fonts/css/all.css' %}" />
-  <link rel="stylesheet" href="{% static 'css/base.css' %}" />
   <link rel="stylesheet" href="{% static 'css/animate.css' %}" />
+  <link rel="stylesheet" href="{% static 'css/base.css' %}" />
   <link rel="shortcut icon" type="image/png" href="{% static 'images/logo.png' %}" />
   <title>RM</title>
 </head>
@@ -55,6 +55,35 @@
     $(function () {
       $("body").show();
     });
+  </script>
+  <script>
+    $(document).ready(function () {
+      var $horizontal = $('#horizontal');
+
+      $(window).scroll(function () {
+        var s = $(this).scrollTop(),
+          d = $(document).height(),
+          c = $(this).height();
+
+        scrollPercent = (s / (d - c));
+
+        var position = (scrollPercent * 55 * ($(document).width() - $horizontal.width()));
+
+        $horizontal.css({
+          'left': position
+        });
+      });
+    });
+  </script>
+  <script>
+    const [red, green, blue] = [0, 56, 30]
+    const section1 = document.querySelector('#head1')
+
+    window.addEventListener('scroll', () => {
+      const y = 1 + (window.scrollY || window.pageYOffset) / 80
+      const [r, g, b] = [red / y, green / y, blue / y].map(Math.round)
+      section1.style.backgroundColor = `rgb(${r}, ${g}, ${b})`
+    })
   </script>
 </body>
 
