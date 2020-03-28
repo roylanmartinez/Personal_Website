@@ -1,5 +1,5 @@
 """
-   La librería de Numlet te permite convertir más de 10^2400 números distintos a letras.
+   La librería de Numlet te permite convertir más de dos duocentillones de números distintos a letras.
    La clase 'Numeros' toma como parámetro un valor (tipo int o float) y retorna un string mediante el método 'a_letras',
    además on el fin de trabajar números decimales muy largos Numlet también acepta strings y números en notación
    científica.
@@ -42,6 +42,7 @@ class Numero:
 
         """
 
+    # Instanciador y eliminador de espacios: __init__()
     def __init__(self, numero):
         self.num = self.moldecimal(str(numero).strip())
 
@@ -304,6 +305,7 @@ class Numero:
         else:
             return ''.join([cls.n6(valor, bef=False, dec=False), v2])
 
+    # Lector general para números enteros: lector()
     def lector(self, numero, dec=False):
         cambio = len(numero) % 6 == 0
         entero = numero if cambio else ''.join(
@@ -322,6 +324,7 @@ class Numero:
                                    v1=elemento[0], v2=elemento[1])
             return ''.join([final, self.n6(grupos[-1], True, dec)])[1:]
 
+    # Lector general para números decimales: lectordcml()
     def lectordcml(self, x):
         if x == '0':
             return ''
@@ -367,7 +370,8 @@ class Numero:
             else:
                 # int
                 menos = 'Menos ' if self.num[0] == '-' else ''
-                return ''.join([menos, self.lector(str(int(float(self.num))).lstrip('-'))])
+                return ''.join([menos, self.lector(str(int(self.num)).lstrip('-'))])
 
         except ValueError:
-            return 'valor pasado no es un número'
+            raise ValueError(
+                'argumento pasado a Numlet no es entero ni tampoco decimal')

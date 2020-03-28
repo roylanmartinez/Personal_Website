@@ -25,8 +25,10 @@
 <body style="background-color: rgb(0, 56, 30)">
   <form action="{% url 'num-let-c' %}" method="GET">
     <div class="container wow fadeInDownBig" style="background-color: #1F1F1F; border-radius: 0 0 15px 15px;">
-      <h4>Numlet</h4>
-      <h6 style="padding-top: 10px;color: white;">
+      <a href="https://github.com/roylanmartinez/Numlet/blob/master/README.md">
+        <h1><b><i class="fab fa-github"></i> Numlet</b></h1>
+      </a>
+      <h6 style="color: white;">
         Utilizable en:
       </h6>
       <ul class="list-group" style="padding-right: 0px;">
@@ -42,75 +44,87 @@
         <div class="input-group-prepend">
           <span class="input-group-text" id="inputGroup-sizing-sm">Número</span>
         </div>
-        <input name="numero" id="numeroo" step="any" type="number" class="form-control"
-          aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"
-          placeholder="Utiliza el punto como separador decimal" />
+        <input {% if originaln %} value="{{ originaln }}" {% endif %} name="numero" id="numeroo" step="any"
+          type="number" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"
+          placeholder="Utiliza el punto como separador decimal" required />
       </div>
       <div class="input-group mb-3">
         <div class="input-group-prepend">
           <label class="input-group-text" for="inputGroupSelect01">Formato</label>
         </div>
         <select name="formato" id="formatoo" class="custom-select" id="inputGroupSelect01" style="width: 30vw;">
-          <option selected>Elige un formato</option>
-          <option value="1">Minúscula</option>
-          <option value="2">Mayúscula</option>
-          <option value="3">Título</option>
-          <option value="4">Título (todas las palabras)</option>
+          <option value="1" {% if originalf == "1" %} selected {% endif %}>Minúscula</option>
+          <option value="2" {% if originalf == "2" %} selected {% endif %}>Mayúscula</option>
+          <option value="3" {% if originalf == "3" %} selected {% endif %}>Título (primera palabra)
+          </option>
+          <option value="4" {% if originalf == "4" %} selected {% endif %}>Título (todas las palabras)
+          </option>
         </select>
       </div>
       <hr color="green" />
 
       <div class="row">
         <div class="col-md-8">
-          <h6 style="color: rgb(161, 255, 161);padding-left: 10px;">O selecciona uno de los siguientes numeros:
+          <h6 style="color: rgb(161, 255, 161);padding-left: 10px;">O selecciona uno de los siguientes ejemplos:
           </h6>
           <div style="padding-top: 5px; padding-bottom: 10px;">
             <div>
               <button id="btn1" type="button" class="btn btn-outline-success btn-lg">
-                144
+                101.99
                 <hr>
-                <small>Minúscula <br> &nbsp;</small>
+                <small>Minúscula<br> &nbsp;</small>
               </button>
               <button id="btn2" type="button" class="btn btn-outline-success btn-lg">
-                -103
+                -12345
                 <hr>
-                <small>Mayúscula <br> &nbsp;</small>
+                <small>Mayúscula<br> &nbsp;</small>
               </button>
               <button id="btn3" type="button" class="btn btn-outline-success btn-lg">
-                10.10
+                9872
                 <hr>
-                <small>Título <br> &nbsp; </small>
+                <small>Título<br>(primera)</small>
               </button>
               <button id="btn4" type="button" class="btn btn-outline-success btn-lg">
-                0.11
+                -10.11
                 <hr>
-                <small>Título <br> (todas) </small>
+                <small>Título<br>(todas)</small>
               </button>
             </div>
           </div>
         </div>
         <div class="col-md-4">
-          <button type="submit" class="rounded-pill btn btn-success btn-lg" style="float:right; margin:20px"><i
-              class="fas fa-play-circle"></i> CALCULAR</button>
+          <button id="enviador" type="submit" class="rounded-pill btn btn-success btn-lg"
+            style="float:right; margin:20px" onClick="return empty()"><i class="fas fa-play-circle"></i>
+            CALCULAR</button>
         </div>
       </div>
     </div>
   </form>
 
-  <div id="resultado" style="text-align: center; color:white">
-    {% if numerop %}
-    <small> Resultado dado mediante clase 'Numero', instanciada con numero pasado y con metodo
-      de propiedad 'a_letras' </small>
+  {% if resultadov %}
+  <div id="resultado" style="text-align: center; color:white;padding-bottom:40px" class="wow fadeIn"
+    data-wow-duration="5s">
+    <small>
+      Resultado dado mediante clase 'Numero', instanciada con número pasado y con método
+      de propiedad 'a_letras'. Más detalles en repositorio.
+    </small>
     <h1>
-      <h1> {{ numerop }} </h1>
+      <h2> {{ resultadov }} </h2>
     </h1>
-    {% endif %}
+    <script>
+      window.onload = function () {
+        var el = document.getElementById("resultado");
+        el.scrollIntoView(true);
+      }
+    </script>
   </div>
+  {% endif %}
+
 
 
   <nav id="nb" class="navbar navbar-expand-lg navbar-light fixed-bottom wow flipInX" data-wow-duration="2s"
     style="background-color: white; border-radius: 25px;">
-    <a class="navbar-brand" href="#">
+    <a class="navbar-brand">
       <img src="{% static 'images/logo.png' %}" width="30" height="30" alt="" />
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
@@ -120,7 +134,7 @@
     <div class="collapse navbar-collapse" id="navbarText">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item">
-          <a class="nav-link" href="#icontact"><i class="far fa-envelope"></i> Contacto</a>
+          <a class="nav-link" href=""><i class="far fa-envelope"></i> Contacto</a>
         </li>
         <li class="nav-item dropup">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown"
@@ -129,23 +143,14 @@
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
             <a class="dropdown-item" href="#top">Español</a>
-            <a class="dropdown-item" href="{% url 'pag-en' %}">Inglés</a>
+            <a class="dropdown-item">Inglés</a>
           </div>
         </li>
       </ul>
     </div>
   </nav>
-  <div>
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, eum?
-
-  </div>
-  <div id="aa">
-
-  </div>
 
 
-  <!-- Optional JavaScript -->
-  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
   <script src="{% static 'js/wow.min.js' %}"></script>
   <script>
     new WOW().init();
@@ -174,29 +179,22 @@
   <script>
     $(document).ready(function () {
       $("#btn1").click(function () {
-        $("#numeroo").val("1234");
+        $("#numeroo").val("101.99");
         $("#formatoo").val("1");
-        $("#ahoraa").show();
       });
       $("#btn2").click(function () {
-        $("#numeroo").val("-10123");
+        $("#numeroo").val("-12345");
         $("#formatoo").val("2");
-        $("#ahoraa").show();
       });
       $("#btn3").click(function () {
-        $("#numeroo").val("10.10");
+        $("#numeroo").val("9872");
         $("#formatoo").val("3");
-        $("#ahoraa").show();
       });
       $("#btn4").click(function () {
-        $("#numeroo").val("0.11");
+        $("#numeroo").val("-10.11");
         $("#formatoo").val("4");
-        $("#ahoraa").show();
       });
     });
-  </script>
-  <script>
-    $('#aa').gotoAnchor();
   </script>
 </body>
 
