@@ -9,7 +9,7 @@
 
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
     integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
-  <link rel="stylesheet" href="{% static 'fonts/css/all.css' %}" />
+  <script src="https://kit.fontawesome.com/8c1f597206.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="{% static 'css/home.css' %}" />
   <link rel="stylesheet" href="{% static 'css/animate.css' %}" />
   <link rel="stylesheet" href="{% static 'css/numlet.css' %}" />
@@ -23,11 +23,11 @@
 </style>
 
 <body style="background-color: rgb(0, 56, 30)">
-  <form action="{% url 'num-let-c' %}" method="GET">
+  <form action="{% url 'num-let-c' typpe='sp' %}" method="GET">
     <div class="container wow fadeInDownBig" style="background-color: #1F1F1F; border-radius: 0 0 15px 15px;">
-      <a href="https://github.com/roylanmartinez/Numlet/blob/master/README.md">
+      <div>
         <h1><b><i class="fab fa-github"></i> Numlet</b></h1>
-      </a>
+      </div>
       <h6 style="color: white;">
         Utilizable en:
       </h6>
@@ -134,7 +134,7 @@
     <div class="collapse navbar-collapse" id="navbarText">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item">
-          <a class="nav-link" href=""><i class="far fa-envelope"></i> Contacto</a>
+          <a class="nav-link" href="{% url 'pag-es' %}"><i class="far fa-address-card"></i> Principal</a>
         </li>
         <li class="nav-item dropup">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown"
@@ -142,9 +142,14 @@
             <i class="fas fa-globe-europe"></i> Idioma
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <a class="dropdown-item" href="#top">Español</a>
-            <a class="dropdown-item">Inglés</a>
+            <a class="dropdown-item" href="#">Español</a>
+            <a class="dropdown-item" href="{% url 'num-let' %}" id="ing">Inglés</a>
           </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" target="_blank" href="https://github.com/roylanmartinez/Numlet"><i
+              class="fab fa-github"></i> Repositorio
+            Numlet</a>
         </li>
       </ul>
     </div>
@@ -195,6 +200,12 @@
         $("#formatoo").val("4");
       });
     });
+  </script>
+  <script>
+    $("#ing").click(function () {
+      $("#noing").show();
+    }
+    );
   </script>
 </body>
 

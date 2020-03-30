@@ -1,0 +1,213 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="theme-color" content="#000000" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
+    <script src="https://kit.fontawesome.com/8c1f597206.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{% static 'css/home.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/animate.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/numlet.css' %}" />
+    <link rel="shortcut icon" type="image/png" href="{% static 'images/logo.png' %}" />
+    <title>RM ES</title>
+</head>
+<style>
+    html {
+        scroll-behavior: smooth;
+    }
+</style>
+
+<body style="background-color: rgb(0, 56, 30)">
+    {% if hm %}
+    <div class="alert alert-warning alert-dismissible" role="alert">
+        <i>*Results are currently just available in Spanish</i>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    {% endif %}
+    <form action="{% url 'num-let-c' typpe='en' %}" method="GET">
+        <div class="container wow fadeInDownBig" style="background-color: #1F1F1F; border-radius: 0 0 15px 15px;">
+            <div>
+                <h1><b><i class="fab fa-github"></i> Numlet (Spanish)</b></h1>
+            </div>
+            <h6 style="color: white;">
+                It can be used in:
+            </h6>
+            <ul class="list-group" style="padding-right: 0px;">
+                <li class="list-group-item list-group-item-success">
+                    Excel | GUI's | Web Pages | Python Based Projects
+                </li>
+            </ul>
+            <hr />
+            <h6 style="padding-top: 10px;color: white;">
+                Insert a number, choose a format and press play
+            </h6>
+            <div class="input-group input-group mb-3" style="padding-top: 10px;">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-sm">Number</span>
+                </div>
+                <input {% if originaln %} value="{{ originaln }}" {% endif %} name="numero" id="numeroo" step="any"
+                    type="number" class="form-control" aria-label="Sizing example input"
+                    aria-describedby="inputGroup-sizing-sm" placeholder="Use the point as decimal separator" required />
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <label class="input-group-text" for="inputGroupSelect01">Formato</label>
+                </div>
+                <select name="formato" id="formatoo" class="custom-select" id="inputGroupSelect01" style="width: 30vw;">
+                    <option value="1" {% if originalf == "1" %} selected {% endif %}>Lower Case</option>
+                    <option value="2" {% if originalf == "2" %} selected {% endif %}>Upper Case</option>
+                    <option value="3" {% if originalf == "3" %} selected {% endif %}>Title (first word)
+                    </option>
+                    <option value="4" {% if originalf == "4" %} selected {% endif %}>Title (all words)
+                    </option>
+                </select>
+            </div>
+            <hr color="green" />
+
+            <div class="row">
+                <div class="col-md-8">
+                    <h6 style="color: rgb(161, 255, 161);padding-left: 10px;"> You can also choose one of the following
+                        examples:
+                    </h6>
+                    <div style="padding-top: 5px; padding-bottom: 10px;">
+                        <div>
+                            <button id="btn1" type="button" class="btn btn-outline-success btn-lg">
+                                101.99
+                                <hr>
+                                <small>Lower Case<br> &nbsp;</small>
+                            </button>
+                            <button id="btn2" type="button" class="btn btn-outline-success btn-lg">
+                                -12345
+                                <hr>
+                                <small>Upper Case<br> &nbsp;</small>
+                            </button>
+                            <button id="btn3" type="button" class="btn btn-outline-success btn-lg">
+                                9872
+                                <hr>
+                                <small>Title<br>(first)</small>
+                            </button>
+                            <button id="btn4" type="button" class="btn btn-outline-success btn-lg">
+                                -10.11
+                                <hr>
+                                <small>Title<br>(all)</small>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <button id="enviador" type="submit" class="rounded-pill btn btn-success btn-lg"
+                        style="float:right; margin:20px" onClick="return empty()"><i class="fas fa-play-circle"></i>
+                        PLAY</button>
+                </div>
+            </div>
+        </div>
+    </form>
+
+    {% if resultadov %}
+    <div id="resultado" style="text-align: center; color:white;padding-bottom:40px" class="wow fadeIn"
+        data-wow-duration="5s">
+        <small>
+            Feel free to use this library anywhere you need to display written numbers in spanish.
+        </small>
+        <h1>
+            <h2> {{ resultadov }} </h2>
+        </h1>
+        <script>
+            window.onload = function () {
+                var el = document.getElementById("resultado");
+                el.scrollIntoView(true);
+            }
+        </script>
+    </div>
+    {% endif %}
+
+
+
+    <nav id="nb" class="navbar navbar-expand-lg navbar-light fixed-bottom wow flipInX" data-wow-duration="2s"
+        style="background-color: white; border-radius: 25px;">
+        <a class="navbar-brand">
+            <img src="{% static 'images/logo.png' %}" width="30" height="30" alt="" />
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
+            aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'pag-en' %}"><i class="far fa-address-card"></i> Home</a>
+                </li>
+                <li class="nav-item dropup">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fas fa-globe-europe"></i> Language
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="{% url 'num-letES' %}">Spanish</a>
+                        <a class="dropdown-item" href="#" id="ing">English</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" target="_blank" href="https://github.com/roylanmartinez/Numlet"><i
+                            class="fab fa-github"></i> Numlet Repository</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+
+    <script src="{% static 'js/wow.min.js' %}"></script>
+    <script>
+        new WOW().init();
+    </script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+    <script>
+        var lastScrollTop = 0;
+        $(window).scroll(function (event) {
+            var st = $(this).scrollTop();
+            if (st > lastScrollTop) {
+                $("#nb").hide();
+            } else {
+                $("#nb").show();
+            }
+            lastScrollTop = st;
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+            $("#btn1").click(function () {
+                $("#numeroo").val("101.99");
+                $("#formatoo").val("1");
+            });
+            $("#btn2").click(function () {
+                $("#numeroo").val("-12345");
+                $("#formatoo").val("2");
+            });
+            $("#btn3").click(function () {
+                $("#numeroo").val("9872");
+                $("#formatoo").val("3");
+            });
+            $("#btn4").click(function () {
+                $("#numeroo").val("-10.11");
+                $("#formatoo").val("4");
+            });
+        });
+    </script>
+</body>
+
+</html>

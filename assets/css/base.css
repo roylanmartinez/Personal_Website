@@ -1,29 +1,49 @@
-/* @media only screen and (max-width: 978px) {
-    h1 {
-        font-size: 300%;
-        color: white;
-        font-weight: bold;"
-    }
-    #boody {
-    padding-left: 10px;
-    padding-right: 10px;
-    border-radius: 25px 25px 0 0;
-    background-color:black
+@media only screen and (max-width: 978px) {
+  h1 {
+    font-size: 45px;
+    color: white;
+    font-weight: bold;
+  }
+  #boody {
+    padding-left: 15px;
+    padding-right: 15px;
+    border-radius: 45px 45px 0 0;
+    background-color: rgb(20, 20, 20);
   }
 }
-@media only screen and (min-width: 978.1px) {
-    h1 {
-        font-size: 100%;
-        color: white;
-        font-weight: bold;
-    }
-    .rooy {
-    padding-left: 300px;
-    padding-right: 10px;
-    border-radius: 25px 25px 0 0;
-    background-color:black
+@media only screen and (min-width: 978px) {
+  h1 {
+    font-size: 135px;
+    color: white;
+    font-weight: bold;
   }
-} */
-.rooy {
-  background-color: blue;
+  #boody {
+    padding-left: 250px;
+    padding-right: 250px;
+    border-radius: 80px 80px 0 0;
+    background-color: rgb(20, 20, 20);
+  }
+}
+p,
+h1,
+h2,
+h3,
+h4 {
+  color: rgb(201, 201, 201);
+}
+#test1 {
+  width: 100%;
+  border-radius: 25px;
+  background-color: rgb(10, 10, 10);
+}
+
+#forme {
+  background-color: rgb(10, 10, 10);
+}
+
+#formn {
+  background-color: rgb(10, 10, 10);
+}
+#formt {
+  background-color: rgb(10, 10, 10);
 }
